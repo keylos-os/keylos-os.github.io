@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>keylos engineering handbook</title>
+<meta name="description" content="The keylos engineering handbook: architecture, capabilities, agents, integrity and state.">
+<link rel="icon" href="../assets/keylos-mark.png">
+<style>
+  :root {
+    --bg: #ffffff; --fg: #111827; --muted: #4b5563; --line: #e5e7eb; --side: #f8fafc;
+    --link: #1d4ed8; --code: #f3f4f6; --accent: #b91c1c; --quote: #f1f5f9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1115; --fg: #e5e7eb; --muted: #9ca3af; --line: #262a33; --side: #13161c;
+      --link: #93b4ff; --code: #1b1f27; --accent: #f87171; --quote: #161a21;
+    }
+    :root:not([data-theme="light"]) .content img { background: #ffffff; border-radius: 6px; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 15px/1.6 Inter, "Segoe UI", Helvetica, Arial, sans-serif; }
+  .layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); min-height: 100vh; }
+  aside { background: var(--side); border-right: 1px solid var(--line); padding: 16px 12px; position: sticky;
+          top: 0; height: 100vh; overflow-y: auto; }
+  aside .brand { font-weight: 700; font-size: 18px; margin: 4px 8px 12px; }
+  aside .brand a { color: var(--fg); text-decoration: none; }
+  aside input { width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px;
+                background: var(--bg); color: var(--fg); font: inherit; margin-bottom: 10px; }
+  aside details { margin: 2px 0; }
+  aside summary { cursor: pointer; font-weight: 600; padding: 4px 8px; border-radius: 6px; list-style: none; }
+  aside summary::-webkit-details-marker { display: none; }
+  aside summary:hover { background: var(--line); }
+  aside a.nav { display: block; padding: 3px 8px 3px 20px; color: var(--muted); text-decoration: none;
+                border-radius: 6px; font-size: 14px; }
+  aside a.nav:hover { background: var(--line); color: var(--fg); }
+  aside a.nav.active { color: var(--fg); background: var(--line); font-weight: 600; }
+  .results a { display: block; padding: 4px 8px; color: var(--fg); text-decoration: none; border-radius: 6px;
+               font-size: 14px; }
+  .results a:hover { background: var(--line); }
+  .results small { color: var(--muted); display: block; }
+  main { padding: 28px 48px 80px; max-width: 1100px; }
+  .content h1 { font-size: 30px; margin: 0 0 12px; }
+  .content h2 { font-size: 22px; margin: 32px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+  .content h3 { font-size: 18px; margin: 24px 0 8px; }
+  .content a { color: var(--link); }
+  .content a.anchor { visibility: hidden; text-decoration: none; color: var(--muted); font-weight: 400; }
+  .content h1:hover a.anchor, .content h2:hover a.anchor, .content h3:hover a.anchor { visibility: visible; }
+  .content code { background: var(--code); padding: 1px 5px; border-radius: 4px; font-size: 13px;
+                  font-family: "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace; }
+  .content pre { background: var(--code); padding: 14px 16px; border-radius: 8px; overflow-x: auto; }
+  .content pre code { padding: 0; background: none; }
+  .content blockquote { margin: 0 0 16px; padding: 10px 16px; background: var(--quote);
+                        border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; color: var(--muted); }
+  .content blockquote p { margin: 4px 0; }
+  .content .table { overflow-x: auto; margin: 12px 0; }
+  .content table { border-collapse: collapse; font-size: 14px; }
+  .content th, .content td { border: 1px solid var(--line); padding: 6px 10px; vertical-align: top; text-align: left; }
+  .content th { background: var(--side); }
+  .content img { max-width: 100%; height: auto; display: block; margin: 12px 0; }
+  .content hr { border: 0; border-top: 1px solid var(--line); margin: 24px 0; }
+  .toc { font-size: 13px; color: var(--muted); margin: 0 0 20px; }
+  .toc a { color: var(--muted); margin-right: 12px; }
+  .crumb { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
+  .err { color: var(--accent); }
+  @media (max-width: 860px) {
+    .layout { grid-template-columns: 1fr; }
+    aside { position: static; height: auto; }
+    main { padding: 20px 16px 60px; }
+  }
+.edition { color: var(--muted); font-size: 13px; } .edition a { color: var(--link); }
+.layout, aside, main, .content { min-width: 0; }
+.content { overflow-wrap: anywhere; }
+.content pre, .content .table { max-width: 100%; overflow-x: auto; }
+.content pre, .content table { overflow-wrap: normal; }
+.content pre code { white-space: pre; }
+@media (max-width: 860px) { .layout { grid-template-columns: minmax(0, 1fr); } aside { overflow-wrap: anywhere; } }
+.skip { position:absolute; left:-9999px; } .skip:focus { left:16px; top:8px; z-index:10; padding:8px; background:var(--bg); }
+:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main" onclick="event.preventDefault(); document.getElementById('main').focus();">Skip to content</a>
+<div class="layout">
+  <aside>
+    <div class="brand"><a href="../">← keylos</a></div>
+    <div class="brand"><a href="#/README.md">keylos handbook</a></div>
+    <input id="q" aria-label="Search handbook titles and headings" type="search" placeholder="Search titles and headings…" autocomplete="off">
+    <div class="results" id="results"></div>
+    <nav id="nav" aria-label="Handbook sections"></nav>
+  </aside>
+  <main id="main" tabindex="-1">
+    <p class="edition">Design &amp; specification handbook · Early development · <a href="../#status">Implementation status</a></p>
+    <div class="crumb" id="crumb"></div>
+    <div class="toc" id="toc"></div>
+    <article class="content" id="content"></article>
+  </main>
+</div>
+<script src="vendor/md.js"></script>
+<script src="nav.js"></script>
+<script src="published.js"></script>
+<script src="reader.js"></script>
+</body>
+</html>

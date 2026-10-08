@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1164 658" width="1164" height="658" role="img" aria-label="Removable media">
+<style>
+  .bg { fill: #ffffff; }
+  .title { font: 600 18px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111827; }
+  .subtitle { font: 400 12px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; }
+  .lbl { font: 600 12.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111827; }
+  .sub { font: 400 11px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #374151; }
+  .mono { font: 400 11px 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; fill: #1f2937; }
+  .small { font: 400 10.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; }
+  .grp { fill: none; stroke: #9ca3af; stroke-width: 1.2; stroke-dasharray: 5 4; }
+  .grplbl { font: 600 11.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; letter-spacing: 0.04em; }
+  .edge { fill: none; stroke: #374151; stroke-width: 1.4; }
+  .edge.dash { stroke-dasharray: 5 4; }
+  .elbl { font: 400 10.8px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1f2937; }
+  .elblbg { fill: #ffffff; opacity: 0.92; }
+  .life { stroke: #9ca3af; stroke-width: 1; stroke-dasharray: 3 4; }
+  .act { fill: #ffffff; stroke: #6b7280; stroke-width: 1; }
+  .note { fill: #fffbea; stroke: #d6b656; stroke-width: 1; }
+  .notetxt { font: 400 10.8px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4a3b00; }
+  .forbid { fill: #b91c1c; }
+</style>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/></marker></defs>
+<rect class="bg" x="0" y="0" width="1164" height="658"/>
+<text class="title" x="24" y="34">Removable media</text>
+<text class="subtitle" x="24" y="54">The host never mounts removable storage: a media VM parses it and serves files labelled untrusted</text>
+<rect x="70" y="76" width="120" height="40" rx="8" fill="#f1f2f4" stroke="#4b5563" stroke-width="1.6"/>
+<text class="lbl" x="130" y="100" text-anchor="middle">USB stick</text>
+<rect x="242.7" y="76" width="120" height="40" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="302.7" y="100" text-anchor="middle">devd</text>
+<rect x="365.4" y="76" width="174.6" height="40" rx="8" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/>
+<text class="lbl" x="452.7" y="100" text-anchor="middle">atrium (trusted path)</text>
+<rect x="547.1" y="76" width="120" height="40" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="607.1" y="100" text-anchor="middle">bench</text>
+<rect x="701.8" y="76" width="120" height="40" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="761.8" y="100" text-anchor="middle">media VM</text>
+<rect x="851.8" y="76" width="120" height="40" rx="8" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/>
+<text class="lbl" x="911.8" y="100" text-anchor="middle">portal-files</text>
+<rect x="1006.4" y="76" width="120" height="40" rx="8" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/>
+<text class="lbl" x="1066.4" y="100" text-anchor="middle">app</text>
+<line class="life" x1="130" y1="116" x2="130" y2="630"/>
+<line class="life" x1="302.7" y1="116" x2="302.7" y2="630"/>
+<line class="life" x1="452.7" y1="116" x2="452.7" y2="630"/>
+<line class="life" x1="607.1" y1="116" x2="607.1" y2="630"/>
+<line class="life" x1="761.8" y1="116" x2="761.8" y2="630"/>
+<line class="life" x1="911.8" y1="116" x2="911.8" y2="630"/>
+<line class="life" x1="1066.4" y1="116" x2="1066.4" y2="630"/>
+<path class="edge" d="M 134 146 L 298.7 146" marker-end="url(#ah)"/>
+<rect class="elblbg" x="141" y="129" width="150.7" height="15" rx="3"/>
+<text class="elbl" x="216.4" y="140" text-anchor="middle">attach (no driver bound)</text>
+<path class="edge" d="M 306.7 180 L 448.7 180" marker-end="url(#ah)"/>
+<rect class="elblbg" x="317.4" y="163" width="120.6" height="15" rx="3"/>
+<text class="elbl" x="377.7" y="174" text-anchor="middle">DeviceAdmin.pending</text>
+<path class="edge" d="M 452.7 208 L 492.7 208 L 492.7 226 L 456.7 226" marker-end="url(#ah)"/>
+<rect class="elblbg" x="498.7" y="211" width="90.4" height="15" rx="3"/><text class="elbl" x="501.7" y="222">human approves</text>
+<path class="edge" d="M 448.7 258 L 306.7 258" marker-end="url(#ah)"/>
+<rect class="elblbg" x="317.4" y="241" width="120.6" height="15" rx="3"/>
+<text class="elbl" x="377.7" y="252" text-anchor="middle">authorize(decision)</text>
+<path class="edge" d="M 456.7 292 L 603.1 292" marker-end="url(#ah)"/>
+<rect class="elblbg" x="469.6" y="275" width="120.6" height="15" rx="3"/>
+<text class="elbl" x="529.9" y="286" text-anchor="middle">Bench.media(device)</text>
+<path class="edge" d="M 603.1 326 L 306.7 326" marker-end="url(#ah)"/>
+<rect class="elblbg" x="385.6" y="309" width="138.7" height="15" rx="3"/>
+<text class="elbl" x="454.9" y="320" text-anchor="middle">MediaAttach.claimBlock</text>
+<path class="edge dash" d="M 306.7 360 L 603.1 360" marker-end="url(#ah)"/>
+<rect class="elblbg" x="427.8" y="343" width="54.2" height="15" rx="3"/>
+<text class="elbl" x="454.9" y="354" text-anchor="middle">block fd</text>
+<path class="edge" d="M 611.1 394 L 757.8 394" marker-end="url(#ah)"/>
+<rect class="elblbg" x="618.1" y="377" width="132.6" height="15" rx="3"/>
+<text class="elbl" x="684.5" y="388" text-anchor="middle">start, mount in guest</text>
+<path class="edge dash" d="M 611.1 428 L 907.8 428" marker-end="url(#ah)"/>
+<rect class="elblbg" x="720.3" y="411" width="78.4" height="15" rx="3"/>
+<text class="elbl" x="759.5" y="422" text-anchor="middle">MediaBrowser</text>
+<path class="edge" d="M 1062.4 462 L 915.8 462" marker-end="url(#ah)"/>
+<rect class="elblbg" x="952.9" y="445" width="72.3" height="15" rx="3"/>
+<text class="elbl" x="989.1" y="456" text-anchor="middle">pick a file</text>
+<path class="edge" d="M 907.8 496 L 765.8 496" marker-end="url(#ah)"/>
+<rect class="elblbg" x="782.5" y="479" width="108.5" height="15" rx="3"/>
+<text class="elbl" x="836.8" y="490" text-anchor="middle">MediaBrowser.open</text>
+<path class="edge dash" d="M 915.8 530 L 1062.4 530" marker-end="url(#ah)"/>
+<rect class="elblbg" x="922.8" y="513" width="132.6" height="15" rx="3"/>
+<text class="elbl" x="989.1" y="524" text-anchor="middle">fd · public/untrusted</text>
+<rect class="note" x="232.7" y="556" width="903.7" height="40" rx="4"/>
+<text class="notetxt" x="240.7" y="573">Writing to the device is the effect media.export (data copied into the VM, which writes it).</text>
+<text class="notetxt" x="240.7" y="588">Backup disks with a verified keylos-backup LUKS2 token are the only host mounts.</text>
+</svg>

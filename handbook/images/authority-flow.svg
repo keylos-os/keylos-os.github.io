@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1264 702" width="1264" height="702" role="img" aria-label="Authority flow: from request to file descriptor">
+<style>
+  .bg { fill: #ffffff; }
+  .title { font: 600 18px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111827; }
+  .subtitle { font: 400 12px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; }
+  .lbl { font: 600 12.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111827; }
+  .sub { font: 400 11px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #374151; }
+  .mono { font: 400 11px 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; fill: #1f2937; }
+  .small { font: 400 10.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; }
+  .grp { fill: none; stroke: #9ca3af; stroke-width: 1.2; stroke-dasharray: 5 4; }
+  .grplbl { font: 600 11.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; letter-spacing: 0.04em; }
+  .edge { fill: none; stroke: #374151; stroke-width: 1.4; }
+  .edge.dash { stroke-dasharray: 5 4; }
+  .elbl { font: 400 10.8px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1f2937; }
+  .elblbg { fill: #ffffff; opacity: 0.92; }
+  .life { stroke: #9ca3af; stroke-width: 1; stroke-dasharray: 3 4; }
+  .act { fill: #ffffff; stroke: #6b7280; stroke-width: 1; }
+  .note { fill: #fffbea; stroke: #d6b656; stroke-width: 1; }
+  .notetxt { font: 400 10.8px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4a3b00; }
+  .forbid { fill: #b91c1c; }
+</style>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/></marker></defs>
+<rect class="bg" x="0" y="0" width="1264" height="702"/>
+<text class="title" x="24" y="34">Authority flow: from request to file descriptor</text>
+<text class="subtitle" x="24" y="54">Request → policy → approval → token → materialize → fd</text>
+<rect x="70" y="76" width="120" height="40" rx="8" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/>
+<text class="lbl" x="130" y="100" text-anchor="middle">App (tier 1)</text>
+<rect x="357.3" y="76" width="120" height="40" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="417.3" y="100" text-anchor="middle">broker</text>
+<rect x="656.4" y="76" width="120" height="40" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="716.4" y="100" text-anchor="middle">Cedar policy</text>
+<rect x="779.1" y="76" width="174.6" height="40" rx="8" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/>
+<text class="lbl" x="866.4" y="100" text-anchor="middle">atrium (trusted path)</text>
+<rect x="956.4" y="76" width="120" height="40" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="1016.4" y="100" text-anchor="middle">ledger</text>
+<rect x="1106.4" y="76" width="120" height="40" rx="8" fill="#e5e7eb" stroke="#111827" stroke-width="1.6"/>
+<text class="lbl" x="1166.4" y="100" text-anchor="middle">Kernel / fs</text>
+<line class="life" x1="130" y1="116" x2="130" y2="674"/>
+<line class="life" x1="417.3" y1="116" x2="417.3" y2="674"/>
+<line class="life" x1="716.4" y1="116" x2="716.4" y2="674"/>
+<line class="life" x1="866.4" y1="116" x2="866.4" y2="674"/>
+<line class="life" x1="1016.4" y1="116" x2="1016.4" y2="674"/>
+<line class="life" x1="1166.4" y1="116" x2="1166.4" y2="674"/>
+<path class="edge" d="M 134 146 L 413.3 146" marker-end="url(#ah)"/>
+<rect class="elblbg" x="141" y="129" width="265.3" height="15" rx="3"/>
+<text class="elbl" x="273.6" y="140" text-anchor="middle">request(GrantRequest{path, [read], reason})</text>
+<path class="edge" d="M 421.3 180 L 712.4 180" marker-end="url(#ah)"/>
+<rect class="elblbg" x="440.2" y="163" width="253.2" height="15" rx="3"/>
+<text class="elbl" x="566.9" y="174" text-anchor="middle">is_authorized(principal, read, Path, ctx)</text>
+<path class="edge dash" d="M 712.4 214 L 421.3 214" marker-end="url(#ah)"/>
+<rect class="elblbg" x="509.6" y="197" width="114.5" height="15" rx="3"/>
+<text class="elbl" x="566.9" y="208" text-anchor="middle">permit @tier(&quot;t2&quot;)</text>
+<path class="edge" d="M 421.3 248 L 862.4 248" marker-end="url(#ah)"/>
+<rect class="elblbg" x="527.3" y="231" width="229.1" height="15" rx="3"/>
+<text class="elbl" x="641.9" y="242" text-anchor="middle">TrustedPrompt.approve(ApprovalPrompt)</text>
+<path class="edge dash" d="M 862.4 282 L 421.3 282" marker-end="url(#ah)"/>
+<rect class="elblbg" x="536.4" y="265" width="211" height="15" rx="3"/>
+<text class="elbl" x="641.9" y="276" text-anchor="middle">Decision{approved, scope, mandate}</text>
+<path class="edge" d="M 417.3 310 L 457.3 310 L 457.3 328 L 421.3 328" marker-end="url(#ah)"/>
+<rect class="elblbg" x="463.3" y="313" width="235.1" height="15" rx="3"/><text class="elbl" x="466.3" y="324">mint Biscuit (right, expires, root_id)</text>
+<path class="edge" d="M 421.3 360 L 1012.4 360" marker-end="url(#ah)"/>
+<rect class="elblbg" x="632.5" y="343" width="168.8" height="15" rx="3"/>
+<text class="elbl" x="716.9" y="354" text-anchor="middle">append(grant.issue receipt)</text>
+<path class="edge dash" d="M 413.3 394 L 134 394" marker-end="url(#ah)"/>
+<rect class="elblbg" x="189.2" y="377" width="168.8" height="15" rx="3"/>
+<text class="elbl" x="273.6" y="388" text-anchor="middle">GrantOutcome.granted(token)</text>
+<path class="edge" d="M 134 428 L 413.3 428" marker-end="url(#ah)"/>
+<rect class="elblbg" x="162.1" y="411" width="223.1" height="15" rx="3"/>
+<text class="elbl" x="273.6" y="422" text-anchor="middle">materialize(token, resource, [read])</text>
+<path class="edge" d="M 417.3 456 L 457.3 456 L 457.3 474 L 421.3 474" marker-end="url(#ah)"/>
+<rect class="elblbg" x="463.3" y="459" width="211" height="15" rx="3"/><text class="elbl" x="466.3" y="470">authorize token + revocation check</text>
+<path class="edge" d="M 421.3 506 L 1162.4 506" marker-end="url(#ah)"/>
+<rect class="elblbg" x="647.2" y="489" width="289.4" height="15" rx="3"/>
+<text class="elbl" x="791.9" y="500" text-anchor="middle">openat2(root, rel, RESOLVE_BENEATH|NO_SYMLINKS)</text>
+<path class="edge dash" d="M 1162.4 540 L 421.3 540" marker-end="url(#ah)"/>
+<rect class="elblbg" x="782.8" y="523" width="18.1" height="15" rx="3"/>
+<text class="elbl" x="791.9" y="534" text-anchor="middle">fd</text>
+<path class="edge dash" d="M 413.3 574 L 134 574" marker-end="url(#ah)"/>
+<rect class="elblbg" x="204.3" y="557" width="138.7" height="15" rx="3"/>
+<text class="elbl" x="273.6" y="568" text-anchor="middle">Handle.fd (SCM_RIGHTS)</text>
+<rect class="note" x="60" y="600" width="1176.4" height="40" rx="4"/>
+<text class="notetxt" x="68" y="617">The app never resolves the path itself; it only receives the opened fd.</text>
+<text class="notetxt" x="68" y="632">The label of the file raises the app session&#x27;s label on materialize.</text>
+</svg>

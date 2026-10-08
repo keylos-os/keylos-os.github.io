@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://keylos-os.github.io/sitemap.xml

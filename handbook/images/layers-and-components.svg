@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1298 612" width="1298" height="612" role="img" aria-label="Layers and components">
+<style>
+  .bg { fill: #ffffff; }
+  .title { font: 600 18px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111827; }
+  .subtitle { font: 400 12px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; }
+  .lbl { font: 600 12.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111827; }
+  .sub { font: 400 11px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #374151; }
+  .mono { font: 400 11px 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; fill: #1f2937; }
+  .small { font: 400 10.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; }
+  .grp { fill: none; stroke: #9ca3af; stroke-width: 1.2; stroke-dasharray: 5 4; }
+  .grplbl { font: 600 11.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; letter-spacing: 0.04em; }
+  .edge { fill: none; stroke: #374151; stroke-width: 1.4; }
+  .edge.dash { stroke-dasharray: 5 4; }
+  .elbl { font: 400 10.8px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1f2937; }
+  .elblbg { fill: #ffffff; opacity: 0.92; }
+  .life { stroke: #9ca3af; stroke-width: 1; stroke-dasharray: 3 4; }
+  .act { fill: #ffffff; stroke: #6b7280; stroke-width: 1; }
+  .note { fill: #fffbea; stroke: #d6b656; stroke-width: 1; }
+  .notetxt { font: 400 10.8px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4a3b00; }
+  .forbid { fill: #b91c1c; }
+</style>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/></marker></defs>
+<rect class="bg" x="0" y="0" width="1298" height="612"/>
+<text class="title" x="24" y="34">Layers and components</text>
+<text class="subtitle" x="24" y="54">30 repositories; protocols is the only coupling between them</text>
+<rect class="grp" x="120" y="76" width="900" height="66" rx="12"/><text class="grplbl" x="132" y="93">EXPERIENCE</text>
+<rect x="300" y="90" width="120" height="40" rx="8" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/>
+<text class="lbl" x="360" y="114" text-anchor="middle">kish</text>
+<rect x="436" y="90" width="120" height="40" rx="8" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/>
+<text class="lbl" x="496" y="114" text-anchor="middle">atrium</text>
+<rect x="572" y="90" width="120" height="40" rx="8" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/>
+<text class="lbl" x="632" y="114" text-anchor="middle">portals</text>
+<rect x="708" y="90" width="120" height="40" rx="8" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/>
+<text class="lbl" x="768" y="114" text-anchor="middle">sdk</text>
+<rect class="grp" x="120" y="154" width="900" height="66" rx="12"/><text class="grplbl" x="132" y="171">AGENTS AND EFFECTS</text>
+<rect x="300" y="168" width="120" height="40" rx="8" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+<text class="lbl" x="360" y="192" text-anchor="middle">aide</text>
+<rect x="436" y="168" width="120" height="40" rx="8" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+<text class="lbl" x="496" y="192" text-anchor="middle">gate</text>
+<rect x="572" y="168" width="120" height="40" rx="8" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+<text class="lbl" x="632" y="192" text-anchor="middle">net</text>
+<rect class="grp" x="120" y="232" width="900" height="66" rx="12"/><text class="grplbl" x="132" y="249">AUTHORITY</text>
+<rect x="300" y="246" width="120" height="40" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="360" y="270" text-anchor="middle">broker</text>
+<rect x="436" y="246" width="120" height="40" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="496" y="270" text-anchor="middle">ledger</text>
+<rect x="572" y="246" width="120" height="40" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="632" y="270" text-anchor="middle">vault</text>
+<rect x="708" y="246" width="120" height="40" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="768" y="270" text-anchor="middle">hearth</text>
+<rect class="grp" x="120" y="310" width="900" height="66" rx="12"/><text class="grplbl" x="132" y="327">EXECUTION</text>
+<rect x="300" y="324" width="100" height="40" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="350" y="348" text-anchor="middle">warden</text>
+<rect x="416" y="324" width="100" height="40" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="466" y="348" text-anchor="middle">bench</text>
+<rect x="532" y="324" width="100" height="40" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="582" y="348" text-anchor="middle">compat</text>
+<rect x="648" y="324" width="100" height="40" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="698" y="348" text-anchor="middle">cri</text>
+<rect x="764" y="324" width="100" height="40" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="814" y="348" text-anchor="middle">devd</text>
+<rect x="880" y="324" width="100" height="40" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="930" y="348" text-anchor="middle">journal</text>
+<rect class="grp" x="120" y="388" width="900" height="66" rx="12"/><text class="grplbl" x="132" y="405">STATE</text>
+<rect x="300" y="402" width="120" height="40" rx="8" fill="#e8f7f1" stroke="#047857" stroke-width="1.6"/>
+<text class="lbl" x="360" y="426" text-anchor="middle">depot</text>
+<rect x="436" y="402" width="120" height="40" rx="8" fill="#e8f7f1" stroke="#047857" stroke-width="1.6"/>
+<text class="lbl" x="496" y="426" text-anchor="middle">strata</text>
+<rect x="572" y="402" width="120" height="40" rx="8" fill="#e8f7f1" stroke="#047857" stroke-width="1.6"/>
+<text class="lbl" x="632" y="426" text-anchor="middle">config</text>
+<rect class="grp" x="120" y="466" width="900" height="66" rx="12"/><text class="grplbl" x="132" y="483">BOOT AND UPDATES</text>
+<rect x="300" y="480" width="120" height="40" rx="8" fill="#f3efff" stroke="#6d28d9" stroke-width="1.6"/>
+<text class="lbl" x="360" y="504" text-anchor="middle">boot</text>
+<rect x="436" y="480" width="120" height="40" rx="8" fill="#f3efff" stroke="#6d28d9" stroke-width="1.6"/>
+<text class="lbl" x="496" y="504" text-anchor="middle">courier</text>
+<rect x="120" y="544" width="900" height="40" rx="8" fill="#e5e7eb" stroke="#111827" stroke-width="1.6"/>
+<text class="lbl" x="570" y="568" text-anchor="middle">Linux kernel — Landlock · BPF LSM (kl-exec) · IPE · fs-verity · pidfd · KVM</text>
+<rect x="20" y="76" width="84" height="508" rx="8" fill="#fafafa" stroke="#374151" stroke-width="1.6"/>
+<text class="lbl" x="62" y="305" text-anchor="middle">proto-</text>
+<text class="lbl" x="62" y="321" text-anchor="middle">cols</text>
+<text class="sub" x="62" y="337" text-anchor="middle">capwire</text>
+<text class="sub" x="62" y="351" text-anchor="middle">IDs</text>
+<text class="sub" x="62" y="365" text-anchor="middle">formats</text>
+<rect class="grp" x="1050" y="76" width="220" height="300" rx="12"/><text class="grplbl" x="1062" y="93">OFF-MACHINE SUPPLY CHAIN</text>
+<rect x="1070" y="106" width="180" height="44" rx="8" fill="#f1f2f4" stroke="#4b5563" stroke-width="1.6"/>
+<text class="lbl" x="1160" y="125" text-anchor="middle">pkgs</text>
+<text class="sub" x="1160" y="141" text-anchor="middle">recipes</text>
+<rect x="1070" y="166" width="180" height="44" rx="8" fill="#f1f2f4" stroke="#4b5563" stroke-width="1.6"/>
+<text class="lbl" x="1160" y="185" text-anchor="middle">forge</text>
+<text class="sub" x="1160" y="201" text-anchor="middle">hermetic builds</text>
+<rect x="1070" y="226" width="180" height="44" rx="8" fill="#f1f2f4" stroke="#4b5563" stroke-width="1.6"/>
+<text class="lbl" x="1160" y="245" text-anchor="middle">tlog</text>
+<text class="sub" x="1160" y="261" text-anchor="middle">transparency logs</text>
+<rect x="1070" y="286" width="180" height="44" rx="8" fill="#f1f2f4" stroke="#4b5563" stroke-width="1.6"/>
+<text class="lbl" x="1160" y="305" text-anchor="middle">keylos</text>
+<text class="sub" x="1160" y="321" text-anchor="middle">image assembly</text>
+<path class="edge" d="M 1160 150 L 1160 166" marker-end="url(#ah)"/>
+<path class="edge" d="M 1160 210 L 1160 226" marker-end="url(#ah)"/>
+<rect class="grp" x="1050" y="396" width="220" height="170" rx="12"/><text class="grplbl" x="1062" y="413">OPERATIONS</text>
+<rect x="1070" y="426" width="180" height="36" rx="8" fill="#f1f2f4" stroke="#4b5563" stroke-width="1.6"/>
+<text class="lbl" x="1160" y="448" text-anchor="middle">installer</text>
+<rect x="1070" y="470" width="180" height="36" rx="8" fill="#f1f2f4" stroke="#4b5563" stroke-width="1.6"/>
+<text class="lbl" x="1160" y="492" text-anchor="middle">fleet</text>
+<rect x="1070" y="514" width="180" height="36" rx="8" fill="#fdecf3" stroke="#9d174d" stroke-width="1.6"/>
+<text class="lbl" x="1160" y="536" text-anchor="middle">vouch</text>
+</svg>

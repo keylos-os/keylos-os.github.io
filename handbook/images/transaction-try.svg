@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1143 692" width="1143" height="692" role="img" aria-label="Transactions: try, commit, undo">
+<style>
+  .bg { fill: #ffffff; }
+  .title { font: 600 18px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111827; }
+  .subtitle { font: 400 12px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; }
+  .lbl { font: 600 12.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111827; }
+  .sub { font: 400 11px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #374151; }
+  .mono { font: 400 11px 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; fill: #1f2937; }
+  .small { font: 400 10.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; }
+  .grp { fill: none; stroke: #9ca3af; stroke-width: 1.2; stroke-dasharray: 5 4; }
+  .grplbl { font: 600 11.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; letter-spacing: 0.04em; }
+  .edge { fill: none; stroke: #374151; stroke-width: 1.4; }
+  .edge.dash { stroke-dasharray: 5 4; }
+  .elbl { font: 400 10.8px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1f2937; }
+  .elblbg { fill: #ffffff; opacity: 0.92; }
+  .life { stroke: #9ca3af; stroke-width: 1; stroke-dasharray: 3 4; }
+  .act { fill: #ffffff; stroke: #6b7280; stroke-width: 1; }
+  .note { fill: #fffbea; stroke: #d6b656; stroke-width: 1; }
+  .notetxt { font: 400 10.8px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4a3b00; }
+  .forbid { fill: #b91c1c; }
+</style>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/></marker></defs>
+<rect class="bg" x="0" y="0" width="1143" height="692"/>
+<text class="title" x="24" y="34">Transactions: try, commit, undo</text>
+<text class="subtitle" x="24" y="54">Undo for files, a receipt for everything else</text>
+<rect x="70" y="76" width="120" height="40" rx="8" fill="#fdecf3" stroke="#9d174d" stroke-width="1.6"/>
+<text class="lbl" x="130" y="100" text-anchor="middle">Human</text>
+<rect x="220" y="76" width="120" height="40" rx="8" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/>
+<text class="lbl" x="280" y="100" text-anchor="middle">kish</text>
+<rect x="447" y="76" width="120" height="40" rx="8" fill="#e8f7f1" stroke="#047857" stroke-width="1.6"/>
+<text class="lbl" x="507" y="100" text-anchor="middle">strata</text>
+<rect x="685.8" y="76" width="120" height="40" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="745.8" y="100" text-anchor="middle">warden</text>
+<rect x="835.8" y="76" width="120" height="40" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="895.8" y="100" text-anchor="middle">command</text>
+<rect x="985.8" y="76" width="120" height="40" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="1045.8" y="100" text-anchor="middle">ledger</text>
+<line class="life" x1="130" y1="116" x2="130" y2="664"/>
+<line class="life" x1="280" y1="116" x2="280" y2="664"/>
+<line class="life" x1="507" y1="116" x2="507" y2="664"/>
+<line class="life" x1="745.8" y1="116" x2="745.8" y2="664"/>
+<line class="life" x1="895.8" y1="116" x2="895.8" y2="664"/>
+<line class="life" x1="1045.8" y1="116" x2="1045.8" y2="664"/>
+<path class="edge" d="M 134 146 L 276 146" marker-end="url(#ah)"/>
+<rect class="elblbg" x="141.7" y="129" width="126.6" height="15" rx="3"/>
+<text class="elbl" x="205" y="140" text-anchor="middle">try { make install }</text>
+<path class="edge" d="M 284 180 L 503 180" marker-end="url(#ah)"/>
+<rect class="elblbg" x="291" y="163" width="205" height="15" rx="3"/>
+<text class="elbl" x="393.5" y="174" text-anchor="middle">begin(dirfds, NetworkPolicy.deny)</text>
+<path class="edge dash" d="M 503 214 L 284 214" marker-end="url(#ah)"/>
+<rect class="elblbg" x="309.1" y="197" width="168.8" height="15" rx="3"/>
+<text class="elbl" x="393.5" y="208" text-anchor="middle">Transaction (overlay views)</text>
+<path class="edge" d="M 284 248 L 741.8 248" marker-end="url(#ah)"/>
+<rect class="elblbg" x="425.5" y="231" width="174.8" height="15" rx="3"/>
+<text class="elbl" x="512.9" y="242" text-anchor="middle">spawn(SpawnSpec.transaction)</text>
+<path class="edge" d="M 749.8 282 L 891.8 282" marker-end="url(#ah)"/>
+<rect class="elblbg" x="757.5" y="265" width="126.6" height="15" rx="3"/>
+<text class="elbl" x="820.8" y="276" text-anchor="middle">exec in overlay view</text>
+<path class="edge dash" d="M 891.8 316 L 284 316" marker-end="url(#ah)"/>
+<rect class="elblbg" x="551.8" y="299" width="72.3" height="15" rx="3"/>
+<text class="elbl" x="587.9" y="310" text-anchor="middle">exit status</text>
+<path class="edge" d="M 284 350 L 503 350" marker-end="url(#ah)"/>
+<rect class="elblbg" x="321.1" y="333" width="144.7" height="15" rx="3"/>
+<text class="elbl" x="393.5" y="344" text-anchor="middle">changes() / conflicts()</text>
+<path class="edge dash" d="M 276 384 L 134 384" marker-end="url(#ah)"/>
+<rect class="elblbg" x="165.8" y="367" width="78.4" height="15" rx="3"/>
+<text class="elbl" x="205" y="378" text-anchor="middle">diff summary</text>
+<path class="edge" d="M 134 418 L 276 418" marker-end="url(#ah)"/>
+<rect class="elblbg" x="183.9" y="401" width="42.2" height="15" rx="3"/>
+<text class="elbl" x="205" y="412" text-anchor="middle">commit</text>
+<path class="edge" d="M 284 452 L 503 452" marker-end="url(#ah)"/>
+<rect class="elblbg" x="366.4" y="435" width="54.2" height="15" rx="3"/>
+<text class="elbl" x="393.5" y="446" text-anchor="middle">commit()</text>
+<path class="edge" d="M 507 480 L 547 480 L 547 498 L 511 498" marker-end="url(#ah)"/>
+<rect class="elblbg" x="553" y="483" width="174.8" height="15" rx="3"/><text class="elbl" x="556" y="494">snapshot target, apply, swap</text>
+<path class="edge" d="M 511 530 L 1041.8 530" marker-end="url(#ah)"/>
+<rect class="elblbg" x="719.1" y="513" width="114.5" height="15" rx="3"/>
+<text class="elbl" x="776.4" y="524" text-anchor="middle">append(txn.commit)</text>
+<path class="edge dash" d="M 503 564 L 284 564" marker-end="url(#ah)"/>
+<rect class="elblbg" x="339.2" y="547" width="108.5" height="15" rx="3"/>
+<text class="elbl" x="393.5" y="558" text-anchor="middle">undo point snap-…</text>
+<rect class="note" x="60" y="590" width="1055.8" height="40" rx="4"/>
+<text class="notetxt" x="68" y="607">undo later: strata.undo(x-…) restores the pre-commit snapshot.</text>
+<text class="notetxt" x="68" y="622">Files open outside the transaction, live databases and lock files make commit refuse.</text>
+</svg>

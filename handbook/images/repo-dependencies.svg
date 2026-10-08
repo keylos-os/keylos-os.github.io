@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1126 692" width="1126" height="692" role="img" aria-label="Repository dependencies">
+<style>
+  .bg { fill: #ffffff; }
+  .title { font: 600 18px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111827; }
+  .subtitle { font: 400 12px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; }
+  .lbl { font: 600 12.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111827; }
+  .sub { font: 400 11px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #374151; }
+  .mono { font: 400 11px 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; fill: #1f2937; }
+  .small { font: 400 10.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; }
+  .grp { fill: none; stroke: #9ca3af; stroke-width: 1.2; stroke-dasharray: 5 4; }
+  .grplbl { font: 600 11.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; letter-spacing: 0.04em; }
+  .edge { fill: none; stroke: #374151; stroke-width: 1.4; }
+  .edge.dash { stroke-dasharray: 5 4; }
+  .elbl { font: 400 10.8px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1f2937; }
+  .elblbg { fill: #ffffff; opacity: 0.92; }
+  .life { stroke: #9ca3af; stroke-width: 1; stroke-dasharray: 3 4; }
+  .act { fill: #ffffff; stroke: #6b7280; stroke-width: 1; }
+  .note { fill: #fffbea; stroke: #d6b656; stroke-width: 1; }
+  .notetxt { font: 400 10.8px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4a3b00; }
+  .forbid { fill: #b91c1c; }
+</style>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/></marker></defs>
+<rect class="bg" x="0" y="0" width="1126" height="692"/>
+<text class="title" x="24" y="34">Repository dependencies</text>
+<text class="subtitle" x="24" y="54">Columns run from callers (left) to foundations (right); an arrow means &#x27;calls an interface of&#x27;</text>
+<text class="grplbl" x="105" y="92" text-anchor="middle">CLIENTS</text>
+<text class="grplbl" x="335" y="92" text-anchor="middle">ORCHESTRATORS</text>
+<text class="grplbl" x="565" y="92" text-anchor="middle">CORE</text>
+<text class="grplbl" x="795" y="92" text-anchor="middle">AUTHORITY / STORE</text>
+<text class="grplbl" x="1025" y="92" text-anchor="middle">FOUNDATIONS</text>
+<path class="edge" style="stroke-opacity:0.75" d="M 170 135.3 C 335 135.3, 335 371.5, 500 371.5" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 170 122.7 C 220 122.7, 220 241, 270 241" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 170 185 C 450 185, 450 312.3, 730 312.3" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 170 241 C 450 241, 450 318.7, 730 318.7" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 170 297 C 450 297, 450 325, 730 325" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 170 359.3 C 220 359.3, 220 409, 270 409" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 170 346.7 C 220 346.7, 220 353, 270 353" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 170 409 C 450 409, 450 372.9, 730 372.9" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 170 465 C 450 465, 450 383.7, 730 383.7" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 170 514.7 C 450 514.7, 450 389.1, 730 389.1" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 170 527.3 C 565 527.3, 565 437, 960 437" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 170 570.7 C 450 570.7, 450 394.6, 730 394.6" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 170 583.3 C 565 583.3, 565 446.5, 960 446.5" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 400 241 C 450 241, 450 318.7, 500 318.7" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 400 297 C 680 297, 680 259.5, 960 259.5" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 400 346.7 C 565 346.7, 565 331.3, 730 331.3" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 400 359.3 C 450 359.3, 450 331.3, 500 331.3" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 400 402.7 C 450 402.7, 450 381, 500 381" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 400 415.3 C 565 415.3, 565 378.3, 730 378.3" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 400 465 C 450 465, 450 390.5, 500 390.5" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 630 325 C 795 325, 795 269, 960 269" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 630 374.7 C 680 374.7, 680 337.7, 730 337.7" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 630 387.3 C 680 387.3, 680 367.4, 730 367.4" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 860 325 C 910 325, 910 278.5, 960 278.5" marker-end="url(#ah)"/>
+<path class="edge" style="stroke-opacity:0.75" d="M 860 381 C 910 381, 910 427.5, 960 427.5" marker-end="url(#ah)"/>
+<rect x="40" y="110" width="130" height="38" rx="8" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/>
+<text class="lbl" x="105" y="133" text-anchor="middle">kish</text>
+<rect x="40" y="166" width="130" height="38" rx="8" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/>
+<text class="lbl" x="105" y="189" text-anchor="middle">atrium</text>
+<rect x="40" y="222" width="130" height="38" rx="8" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/>
+<text class="lbl" x="105" y="245" text-anchor="middle">portals</text>
+<rect x="40" y="278" width="130" height="38" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="105" y="301" text-anchor="middle">devd</text>
+<rect x="40" y="334" width="130" height="38" rx="8" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+<text class="lbl" x="105" y="357" text-anchor="middle">aide</text>
+<rect x="40" y="390" width="130" height="38" rx="8" fill="#e8f7f1" stroke="#047857" stroke-width="1.6"/>
+<text class="lbl" x="105" y="413" text-anchor="middle">config</text>
+<rect x="40" y="446" width="130" height="38" rx="8" fill="#f3efff" stroke="#6d28d9" stroke-width="1.6"/>
+<text class="lbl" x="105" y="469" text-anchor="middle">boot</text>
+<rect x="40" y="502" width="130" height="38" rx="8" fill="#f3efff" stroke="#6d28d9" stroke-width="1.6"/>
+<text class="lbl" x="105" y="525" text-anchor="middle">courier</text>
+<rect x="40" y="558" width="130" height="38" rx="8" fill="#f1f2f4" stroke="#4b5563" stroke-width="1.6"/>
+<text class="lbl" x="105" y="581" text-anchor="middle">forge</text>
+<rect x="270" y="222" width="130" height="38" rx="8" fill="#e8f7f1" stroke="#047857" stroke-width="1.6"/>
+<text class="lbl" x="335" y="245" text-anchor="middle">strata</text>
+<rect x="270" y="278" width="130" height="38" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="335" y="301" text-anchor="middle">hearth</text>
+<rect x="270" y="334" width="130" height="38" rx="8" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+<text class="lbl" x="335" y="357" text-anchor="middle">gate</text>
+<rect x="270" y="390" width="130" height="38" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="335" y="413" text-anchor="middle">bench</text>
+<rect x="270" y="446" width="130" height="38" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="335" y="469" text-anchor="middle">compat</text>
+<rect x="500" y="306" width="130" height="38" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="565" y="329" text-anchor="middle">vault</text>
+<rect x="500" y="362" width="130" height="38" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="565" y="385" text-anchor="middle">warden</text>
+<rect x="730" y="306" width="130" height="38" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="795" y="329" text-anchor="middle">broker</text>
+<rect x="730" y="362" width="130" height="38" rx="8" fill="#e8f7f1" stroke="#047857" stroke-width="1.6"/>
+<text class="lbl" x="795" y="385" text-anchor="middle">depot</text>
+<rect x="960" y="250" width="130" height="38" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="1025" y="273" text-anchor="middle">ledger</text>
+<rect x="960" y="306" width="130" height="38" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="1025" y="329" text-anchor="middle">journal</text>
+<rect x="960" y="362" width="130" height="38" rx="8" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+<text class="lbl" x="1025" y="385" text-anchor="middle">net</text>
+<rect x="960" y="418" width="130" height="38" rx="8" fill="#f1f2f4" stroke="#4b5563" stroke-width="1.6"/>
+<text class="lbl" x="1025" y="441" text-anchor="middle">tlog</text>
+<rect class="note" x="40" y="624" width="700" height="40" rx="4"/>
+<text class="notetxt" x="48" y="641">Not drawn: every repo → protocols (types and capwire); every tier-0 service → ledger (append, facet writer);</text>
+<text class="notetxt" x="48" y="656">every process → journal (log stream fd connected by warden); keylos assembles all repos into the image.</text>
+</svg>

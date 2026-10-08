@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1253 710" width="1253" height="710" role="img" aria-label="Effect outbox">
+<style>
+  .bg { fill: #ffffff; }
+  .title { font: 600 18px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111827; }
+  .subtitle { font: 400 12px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; }
+  .lbl { font: 600 12.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111827; }
+  .sub { font: 400 11px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #374151; }
+  .mono { font: 400 11px 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; fill: #1f2937; }
+  .small { font: 400 10.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; }
+  .grp { fill: none; stroke: #9ca3af; stroke-width: 1.2; stroke-dasharray: 5 4; }
+  .grplbl { font: 600 11.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; letter-spacing: 0.04em; }
+  .edge { fill: none; stroke: #374151; stroke-width: 1.4; }
+  .edge.dash { stroke-dasharray: 5 4; }
+  .elbl { font: 400 10.8px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1f2937; }
+  .elblbg { fill: #ffffff; opacity: 0.92; }
+  .life { stroke: #9ca3af; stroke-width: 1; stroke-dasharray: 3 4; }
+  .act { fill: #ffffff; stroke: #6b7280; stroke-width: 1; }
+  .note { fill: #fffbea; stroke: #d6b656; stroke-width: 1; }
+  .notetxt { font: 400 10.8px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4a3b00; }
+  .forbid { fill: #b91c1c; }
+</style>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/></marker></defs>
+<rect class="bg" x="0" y="0" width="1253" height="710"/>
+<text class="title" x="24" y="34">Effect outbox</text>
+<text class="subtitle" x="24" y="54">Irreversible effects are staged, rendered, approved and only then executed</text>
+<rect x="70" y="76" width="120" height="40" rx="8" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+<text class="lbl" x="130" y="100" text-anchor="middle">Agent harness</text>
+<rect x="291" y="76" width="120" height="40" rx="8" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+<text class="lbl" x="351" y="100" text-anchor="middle">gate</text>
+<rect x="553.9" y="76" width="120" height="40" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="613.9" y="100" text-anchor="middle">broker</text>
+<rect x="805" y="76" width="120" height="40" rx="8" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/>
+<text class="lbl" x="865" y="100" text-anchor="middle">atrium</text>
+<rect x="955" y="76" width="120" height="40" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="1015" y="100" text-anchor="middle">vault</text>
+<rect x="1105" y="76" width="120" height="40" rx="8" fill="#f1f2f4" stroke="#4b5563" stroke-width="1.6"/>
+<text class="lbl" x="1165" y="100" text-anchor="middle">External host</text>
+<line class="life" x1="130" y1="116" x2="130" y2="682"/>
+<line class="life" x1="351" y1="116" x2="351" y2="682"/>
+<line class="life" x1="613.9" y1="116" x2="613.9" y2="682"/>
+<line class="life" x1="865" y1="116" x2="865" y2="682"/>
+<line class="life" x1="1015" y1="116" x2="1015" y2="682"/>
+<line class="life" x1="1165" y1="116" x2="1165" y2="682"/>
+<path class="edge" d="M 134 146 L 347 146" marker-end="url(#ah)"/>
+<rect class="elblbg" x="144" y="129" width="192.9" height="15" rx="3"/>
+<text class="elbl" x="240.5" y="140" text-anchor="middle">stage(EffectIntent{email.send})</text>
+<path class="edge" d="M 351 174 L 391 174 L 391 192 L 355 192" marker-end="url(#ah)"/>
+<rect class="elblbg" x="397" y="177" width="192.9" height="15" rx="3"/><text class="elbl" x="400" y="188">classify: irreversible → outbox</text>
+<path class="edge dash" d="M 347 224 L 134 224" marker-end="url(#ah)"/>
+<rect class="elblbg" x="219.4" y="207" width="42.2" height="15" rx="3"/>
+<text class="elbl" x="240.5" y="218" text-anchor="middle">Intent</text>
+<path class="edge" d="M 134 258 L 347 258" marker-end="url(#ah)"/>
+<rect class="elblbg" x="192.3" y="241" width="96.5" height="15" rx="3"/>
+<text class="elbl" x="240.5" y="252" text-anchor="middle">Intent.dryRun()</text>
+<path class="edge" d="M 134 292 L 347 292" marker-end="url(#ah)"/>
+<rect class="elblbg" x="192.3" y="275" width="96.5" height="15" rx="3"/>
+<text class="elbl" x="240.5" y="286" text-anchor="middle">Intent.commit()</text>
+<path class="edge dash" d="M 347 326 L 134 326" marker-end="url(#ah)"/>
+<rect class="elblbg" x="174.2" y="309" width="132.6" height="15" rx="3"/>
+<text class="elbl" x="240.5" y="320" text-anchor="middle">kl:needs-approval:a-…</text>
+<path class="edge" d="M 355 360 L 609.9 360" marker-end="url(#ah)"/>
+<rect class="elblbg" x="398" y="343" width="168.8" height="15" rx="3"/>
+<text class="elbl" x="482.4" y="354" text-anchor="middle">checkFlow / requestFor (T3)</text>
+<path class="edge" d="M 617.9 394 L 861 394" marker-end="url(#ah)"/>
+<rect class="elblbg" x="624.9" y="377" width="229.1" height="15" rx="3"/>
+<text class="elbl" x="739.5" y="388" text-anchor="middle">approve(rendered effect + provenance)</text>
+<path class="edge dash" d="M 861 428 L 617.9 428" marker-end="url(#ah)"/>
+<rect class="elblbg" x="661.1" y="411" width="156.8" height="15" rx="3"/>
+<text class="elbl" x="739.5" y="422" text-anchor="middle">Decision + mandate (DSSE)</text>
+<path class="edge dash" d="M 609.9 462 L 355 462" marker-end="url(#ah)"/>
+<rect class="elblbg" x="392" y="445" width="180.9" height="15" rx="3"/>
+<text class="elbl" x="482.4" y="456" text-anchor="middle">GrantResult{outcome, mandate}</text>
+<path class="edge" d="M 351 490 L 391 490 L 391 508 L 355 508" marker-end="url(#ah)"/>
+<rect class="elblbg" x="397" y="493" width="199" height="15" rx="3"/><text class="elbl" x="400" y="504">mandate digest == payload digest</text>
+<path class="edge" d="M 355 540 L 1011 540" marker-end="url(#ah)"/>
+<rect class="elblbg" x="601.6" y="523" width="162.8" height="15" rx="3"/>
+<text class="elbl" x="683" y="534" text-anchor="middle">inject(credential, target)</text>
+<path class="edge" d="M 355 574 L 1161 574" marker-end="url(#ah)"/>
+<rect class="elblbg" x="688.7" y="557" width="138.7" height="15" rx="3"/>
+<text class="elbl" x="758" y="568" text-anchor="middle">send (idempotency key)</text>
+<path class="edge dash" d="M 1161 608 L 355 608" marker-end="url(#ah)"/>
+<rect class="elblbg" x="736.9" y="591" width="42.2" height="15" rx="3"/>
+<text class="elbl" x="758" y="602" text-anchor="middle">result</text>
+<path class="edge dash" d="M 347 642 L 134 642" marker-end="url(#ah)"/>
+<rect class="elblbg" x="141" y="625" width="199" height="15" rx="3"/>
+<text class="elbl" x="240.5" y="636" text-anchor="middle">IntentStatus{committed, receipt}</text>
+</svg>

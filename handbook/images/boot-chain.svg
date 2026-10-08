@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1144 428" width="1144" height="428" role="img" aria-label="Boot chain">
+<style>
+  .bg { fill: #ffffff; }
+  .title { font: 600 18px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111827; }
+  .subtitle { font: 400 12px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; }
+  .lbl { font: 600 12.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111827; }
+  .sub { font: 400 11px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #374151; }
+  .mono { font: 400 11px 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; fill: #1f2937; }
+  .small { font: 400 10.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; }
+  .grp { fill: none; stroke: #9ca3af; stroke-width: 1.2; stroke-dasharray: 5 4; }
+  .grplbl { font: 600 11.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; letter-spacing: 0.04em; }
+  .edge { fill: none; stroke: #374151; stroke-width: 1.4; }
+  .edge.dash { stroke-dasharray: 5 4; }
+  .elbl { font: 400 10.8px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1f2937; }
+  .elblbg { fill: #ffffff; opacity: 0.92; }
+  .life { stroke: #9ca3af; stroke-width: 1; stroke-dasharray: 3 4; }
+  .act { fill: #ffffff; stroke: #6b7280; stroke-width: 1; }
+  .note { fill: #fffbea; stroke: #d6b656; stroke-width: 1; }
+  .notetxt { font: 400 10.8px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4a3b00; }
+  .forbid { fill: #b91c1c; }
+</style>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/></marker></defs>
+<rect class="bg" x="0" y="0" width="1144" height="428"/>
+<text class="title" x="24" y="34">Boot chain</text>
+<text class="subtitle" x="24" y="54">Each link verifies the next before it runs; measurements make the result provable to vouch</text>
+<rect x="30" y="84" width="190" height="92" rx="8" fill="#f3efff" stroke="#6d28d9" stroke-width="1.6"/>
+<text class="lbl" x="125" y="120" text-anchor="middle">Firmware</text>
+<text class="sub" x="125" y="136" text-anchor="middle">owner PK/KEK/db</text>
+<text class="sub" x="125" y="150" text-anchor="middle">PCR0–7</text>
+<rect x="254" y="84" width="190" height="92" rx="8" fill="#f3efff" stroke="#6d28d9" stroke-width="1.6"/>
+<text class="lbl" x="349" y="120" text-anchor="middle">systemd-boot</text>
+<text class="sub" x="349" y="136" text-anchor="middle">signed by owner/distro</text>
+<text class="sub" x="349" y="150" text-anchor="middle">boot counting</text>
+<path class="edge" d="M 220 130 L 254 130" marker-end="url(#ah)"/>
+<rect x="478" y="84" width="190" height="92" rx="8" fill="#f3efff" stroke="#6d28d9" stroke-width="1.6"/>
+<text class="lbl" x="573" y="113" text-anchor="middle">UKI</text>
+<text class="sub" x="573" y="129" text-anchor="middle">kernel+initrd+cmdline</text>
+<text class="sub" x="573" y="143" text-anchor="middle">composefs=&lt;OS gen&gt;</text>
+<text class="sub" x="573" y="157" text-anchor="middle">.pcrsig → PCR11</text>
+<path class="edge" d="M 444 130 L 478 130" marker-end="url(#ah)"/>
+<rect x="702" y="84" width="190" height="92" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="797" y="113" text-anchor="middle">initrd: unlock</text>
+<text class="sub" x="797" y="129" text-anchor="middle">TPM2 + PIN</text>
+<text class="sub" x="797" y="143" text-anchor="middle">signed PCR11 policy</text>
+<text class="sub" x="797" y="157" text-anchor="middle">pcrlock NV ∧ NV floor</text>
+<path class="edge" d="M 668 130 L 702 130" marker-end="url(#ah)"/>
+<rect x="926" y="84" width="190" height="92" rx="8" fill="#e8f7f1" stroke="#047857" stroke-width="1.6"/>
+<text class="lbl" x="1021" y="120" text-anchor="middle">LUKS2 AEAD</text>
+<text class="sub" x="1021" y="136" text-anchor="middle">volume key</text>
+<text class="sub" x="1021" y="150" text-anchor="middle">identity → PCR15</text>
+<path class="edge" d="M 892 130 L 926 130" marker-end="url(#ah)"/>
+<path class="edge" d="M 1021 176 L 1021 206 L 125 206 L 125 236" marker-end="url(#ah)"/>
+<rect x="30" y="236" width="190" height="92" rx="8" fill="#e8f7f1" stroke="#047857" stroke-width="1.6"/>
+<text class="lbl" x="125" y="272" text-anchor="middle">Mount OS gen</text>
+<text class="sub" x="125" y="288" text-anchor="middle">composefs</text>
+<text class="sub" x="125" y="302" text-anchor="middle">overlay verity=require</text>
+<rect x="254" y="236" width="190" height="92" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="349" y="265" text-anchor="middle">kl-exec + trust set</text>
+<text class="sub" x="349" y="281" text-anchor="middle">BPF LSM maps → warden</text>
+<text class="sub" x="349" y="295" text-anchor="middle">boot trust set: stream,</text>
+<text class="sub" x="349" y="309" text-anchor="middle">owner, seal, publisher keys</text>
+<path class="edge" d="M 220 282 L 254 282" marker-end="url(#ah)"/>
+<rect x="478" y="236" width="190" height="92" rx="8" fill="#e8f7f1" stroke="#047857" stroke-width="1.6"/>
+<text class="lbl" x="573" y="272" text-anchor="middle">Select /etc</text>
+<text class="sub" x="573" y="288" text-anchor="middle">highest valid configgen</text>
+<text class="sub" x="573" y="302" text-anchor="middle">counter ≥ NV 0x01300101</text>
+<path class="edge" d="M 444 282 L 478 282" marker-end="url(#ah)"/>
+<rect x="702" y="236" width="190" height="92" rx="8" fill="#f3efff" stroke="#6d28d9" stroke-width="1.6"/>
+<text class="lbl" x="797" y="272" text-anchor="middle">leave-initrd</text>
+<text class="sub" x="797" y="288" text-anchor="middle">PCR11 phase change</text>
+<text class="sub" x="797" y="302" text-anchor="middle">disk policy unsatisfiable</text>
+<path class="edge" d="M 668 282 L 702 282" marker-end="url(#ah)"/>
+<rect x="926" y="236" width="190" height="92" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="1021" y="272" text-anchor="middle">warden (PID 1)</text>
+<text class="sub" x="1021" y="288" text-anchor="middle">routes, tier-0 services</text>
+<text class="sub" x="1021" y="302" text-anchor="middle">ledger: boot receipt</text>
+<path class="edge" d="M 892 282 L 926 282" marker-end="url(#ah)"/>
+<rect class="note" x="30" y="360" width="1080" height="40" rx="4"/>
+<text class="notetxt" x="38" y="377">Before the PIN prompt the initrd can show an AK0 quote over PCR0–15 for vouch (verify-before-unlock, KLV1 QR).</text>
+<text class="notetxt" x="38" y="392">Failure at any link: boot counter decrements; after 3 failed tries systemd-boot falls back to the previous generation.</text>
+</svg>

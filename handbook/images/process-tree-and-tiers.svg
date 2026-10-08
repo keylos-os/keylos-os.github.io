@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1098 498" width="1098" height="498" role="img" aria-label="Process tree and tiers">
+<style>
+  .bg { fill: #ffffff; }
+  .title { font: 600 18px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111827; }
+  .subtitle { font: 400 12px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; }
+  .lbl { font: 600 12.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111827; }
+  .sub { font: 400 11px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #374151; }
+  .mono { font: 400 11px 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; fill: #1f2937; }
+  .small { font: 400 10.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; }
+  .grp { fill: none; stroke: #9ca3af; stroke-width: 1.2; stroke-dasharray: 5 4; }
+  .grplbl { font: 600 11.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; letter-spacing: 0.04em; }
+  .edge { fill: none; stroke: #374151; stroke-width: 1.4; }
+  .edge.dash { stroke-dasharray: 5 4; }
+  .elbl { font: 400 10.8px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1f2937; }
+  .elblbg { fill: #ffffff; opacity: 0.92; }
+  .life { stroke: #9ca3af; stroke-width: 1; stroke-dasharray: 3 4; }
+  .act { fill: #ffffff; stroke: #6b7280; stroke-width: 1; }
+  .note { fill: #fffbea; stroke: #d6b656; stroke-width: 1; }
+  .notetxt { font: 400 10.8px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4a3b00; }
+  .forbid { fill: #b91c1c; }
+</style>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/></marker></defs>
+<rect class="bg" x="0" y="0" width="1098" height="498"/>
+<text class="title" x="24" y="34">Process tree and tiers</text>
+<text class="subtitle" x="24" y="54">warden is the only process with UID 0; every other process is a principal with a dynamic UID</text>
+<rect x="440" y="76" width="220" height="48" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="550" y="104" text-anchor="middle">warden (PID 1, UID 0)</text>
+<rect class="grp" x="30" y="150" width="520" height="260" rx="12"/><text class="grplbl" x="42" y="167">SYSTEM.SLICE — TIER 0 SERVICES</text>
+<rect x="46" y="178" width="112" height="34" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="102" y="199" text-anchor="middle">broker</text>
+<rect x="170" y="178" width="112" height="34" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="226" y="199" text-anchor="middle">ledger</text>
+<rect x="294" y="178" width="112" height="34" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="350" y="199" text-anchor="middle">vault</text>
+<rect x="418" y="178" width="112" height="34" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="474" y="199" text-anchor="middle">hearth</text>
+<rect x="46" y="222" width="112" height="34" rx="8" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+<text class="lbl" x="102" y="243" text-anchor="middle">gate</text>
+<rect x="170" y="222" width="112" height="34" rx="8" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+<text class="lbl" x="226" y="243" text-anchor="middle">net</text>
+<rect x="294" y="222" width="112" height="34" rx="8" fill="#e8f7f1" stroke="#047857" stroke-width="1.6"/>
+<text class="lbl" x="350" y="243" text-anchor="middle">depot</text>
+<rect x="418" y="222" width="112" height="34" rx="8" fill="#e8f7f1" stroke="#047857" stroke-width="1.6"/>
+<text class="lbl" x="474" y="243" text-anchor="middle">strata</text>
+<rect x="46" y="266" width="112" height="34" rx="8" fill="#e8f7f1" stroke="#047857" stroke-width="1.6"/>
+<text class="lbl" x="102" y="287" text-anchor="middle">config</text>
+<rect x="170" y="266" width="112" height="34" rx="8" fill="#f3efff" stroke="#6d28d9" stroke-width="1.6"/>
+<text class="lbl" x="226" y="287" text-anchor="middle">courier</text>
+<rect x="294" y="266" width="112" height="34" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="350" y="287" text-anchor="middle">devd</text>
+<rect x="418" y="266" width="112" height="34" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="474" y="287" text-anchor="middle">journal</text>
+<rect x="46" y="310" width="112" height="34" rx="8" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+<text class="lbl" x="102" y="331" text-anchor="middle">aide</text>
+<rect x="170" y="310" width="112" height="34" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="226" y="331" text-anchor="middle">bench</text>
+<rect x="294" y="310" width="112" height="34" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="350" y="331" text-anchor="middle">compat</text>
+<rect x="418" y="310" width="112" height="34" rx="8" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/>
+<text class="lbl" x="474" y="331" text-anchor="middle">atrium</text>
+<rect x="46" y="354" width="112" height="34" rx="8" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/>
+<text class="lbl" x="102" y="375" text-anchor="middle">portal-*</text>
+<rect class="grp" x="570" y="150" width="500" height="260" rx="12"/><text class="grplbl" x="582" y="167">USER-&lt;UID&gt;.SLICE</text>
+<rect x="590" y="182" width="140" height="52" rx="8" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/>
+<text class="lbl" x="660" y="205" text-anchor="middle">shell</text>
+<text class="sub" x="660" y="221" text-anchor="middle">kish (t1)</text>
+<rect x="745" y="182" width="140" height="52" rx="8" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/>
+<text class="lbl" x="815" y="205" text-anchor="middle">apps</text>
+<text class="sub" x="815" y="221" text-anchor="middle">tier 1 (host)</text>
+<rect x="900" y="182" width="150" height="52" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="975" y="198" text-anchor="middle">legacy</text>
+<text class="sub" x="975" y="214" text-anchor="middle">FHS view + userns</text>
+<text class="sub" x="975" y="228" text-anchor="middle">(t2 VM if from web)</text>
+<rect x="590" y="262" width="220" height="60" rx="8" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+<text class="lbl" x="700" y="282" text-anchor="middle">benches (tier 3)</text>
+<text class="sub" x="700" y="298" text-anchor="middle">crosvm workbench VMs</text>
+<text class="sub" x="700" y="312" text-anchor="middle">dev envs · agent sessions</text>
+<rect x="830" y="262" width="220" height="60" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="940" y="282" text-anchor="middle">app VMs (tier 2)</text>
+<text class="sub" x="940" y="298" text-anchor="middle">crosvm + virtio-gpu</text>
+<text class="sub" x="940" y="312" text-anchor="middle">untrusted apps</text>
+<rect x="590" y="340" width="460" height="52" rx="8" fill="#e5e7eb" stroke="#111827" stroke-width="1.6"/>
+<text class="lbl" x="820" y="363" text-anchor="middle">guest kernels</text>
+<text class="sub" x="820" y="379" text-anchor="middle">unsealed code runs only here</text>
+<path class="edge" d="M 550 124 L 290 150" marker-end="url(#ah)"/>
+<path class="edge" d="M 550 124 L 820 150" marker-end="url(#ah)"/>
+<rect class="note" x="30" y="430" width="1040" height="40" rx="4"/>
+<text class="notetxt" x="38" y="447">Tier 0/1/legacy: same host kernel, kl-exec enforced, Landlock + seccomp + namespaces (no userns except legacy).</text>
+<text class="notetxt" x="38" y="462">Tier 2/3: separate guest kernel inside a microVM; the host sees only crosvm device processes, themselves confined.</text>
+</svg>

@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1038 602" width="1038" height="602" role="img" aria-label="keylos — system context">
+<style>
+  .bg { fill: #ffffff; }
+  .title { font: 600 18px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111827; }
+  .subtitle { font: 400 12px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; }
+  .lbl { font: 600 12.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #111827; }
+  .sub { font: 400 11px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #374151; }
+  .mono { font: 400 11px 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; fill: #1f2937; }
+  .small { font: 400 10.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; }
+  .grp { fill: none; stroke: #9ca3af; stroke-width: 1.2; stroke-dasharray: 5 4; }
+  .grplbl { font: 600 11.5px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4b5563; letter-spacing: 0.04em; }
+  .edge { fill: none; stroke: #374151; stroke-width: 1.4; }
+  .edge.dash { stroke-dasharray: 5 4; }
+  .elbl { font: 400 10.8px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #1f2937; }
+  .elblbg { fill: #ffffff; opacity: 0.92; }
+  .life { stroke: #9ca3af; stroke-width: 1; stroke-dasharray: 3 4; }
+  .act { fill: #ffffff; stroke: #6b7280; stroke-width: 1; }
+  .note { fill: #fffbea; stroke: #d6b656; stroke-width: 1; }
+  .notetxt { font: 400 10.8px Inter, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #4a3b00; }
+  .forbid { fill: #b91c1c; }
+</style>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/></marker></defs>
+<rect class="bg" x="0" y="0" width="1038" height="602"/>
+<text class="title" x="24" y="34">keylos — system context</text>
+<text class="subtitle" x="24" y="54">One machine, its owner, and the outside world it trusts only through signatures and logs</text>
+<rect x="40" y="90" width="170" height="64" rx="8" fill="#fdecf3" stroke="#9d174d" stroke-width="1.6"/>
+<text class="lbl" x="125" y="112" text-anchor="middle">Owner (human)</text>
+<text class="sub" x="125" y="128" text-anchor="middle">keyboard, FIDO2 key,</text>
+<text class="sub" x="125" y="142" text-anchor="middle">trusted-path prompts</text>
+<rect x="40" y="200" width="170" height="64" rx="8" fill="#fdecf3" stroke="#9d174d" stroke-width="1.6"/>
+<text class="lbl" x="125" y="222" text-anchor="middle">vouch (phone)</text>
+<text class="sub" x="125" y="238" text-anchor="middle">verify-before-unlock,</text>
+<text class="sub" x="125" y="252" text-anchor="middle">witness, approvals</text>
+<rect class="grp" x="260" y="74" width="470" height="440" rx="12"/><text class="grplbl" x="272" y="91">KEYLOS MACHINE</text>
+<rect x="285" y="104" width="420" height="50" rx="8" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/>
+<text class="lbl" x="495" y="126" text-anchor="middle">Experience</text>
+<text class="sub" x="495" y="142" text-anchor="middle">kish · atrium · portals</text>
+<rect x="285" y="166" width="205" height="50" rx="8" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+<text class="lbl" x="387.5" y="188" text-anchor="middle">Agents &amp; effects</text>
+<text class="sub" x="387.5" y="204" text-anchor="middle">aide · gate · net</text>
+<rect x="500" y="166" width="205" height="50" rx="8" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/>
+<text class="lbl" x="602.5" y="188" text-anchor="middle">Authority</text>
+<text class="sub" x="602.5" y="204" text-anchor="middle">broker · ledger · vault · hearth</text>
+<rect x="285" y="228" width="420" height="50" rx="8" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/>
+<text class="lbl" x="495" y="250" text-anchor="middle">Execution</text>
+<text class="sub" x="495" y="266" text-anchor="middle">warden · bench · compat · cri · devd · journal</text>
+<rect x="285" y="290" width="420" height="50" rx="8" fill="#e8f7f1" stroke="#047857" stroke-width="1.6"/>
+<text class="lbl" x="495" y="312" text-anchor="middle">State</text>
+<text class="sub" x="495" y="328" text-anchor="middle">depot · strata · config</text>
+<rect x="285" y="352" width="420" height="50" rx="8" fill="#f3efff" stroke="#6d28d9" stroke-width="1.6"/>
+<text class="lbl" x="495" y="374" text-anchor="middle">Boot &amp; updates</text>
+<text class="sub" x="495" y="390" text-anchor="middle">boot · courier  (UKI, TPM2, composefs, kl-exec)</text>
+<rect x="285" y="414" width="420" height="44" rx="8" fill="#e5e7eb" stroke="#111827" stroke-width="1.6"/>
+<text class="lbl" x="495" y="440" text-anchor="middle">Linux kernel (stock, KL1–KL3) · TPM 2.0 · UEFI</text>
+<text class="small" x="285" y="490" text-anchor="start">all components speak capwire (protocols); no system bus</text>
+<rect x="790" y="90" width="220" height="58" rx="8" fill="#f1f2f4" stroke="#4b5563" stroke-width="1.6"/>
+<text class="lbl" x="900" y="109" text-anchor="middle">Release infra</text>
+<text class="sub" x="900" y="125" text-anchor="middle">TUF repo · OCI registry</text>
+<text class="sub" x="900" y="139" text-anchor="middle">release-stream keys</text>
+<rect x="790" y="168" width="220" height="58" rx="8" fill="#f1f2f4" stroke="#4b5563" stroke-width="1.6"/>
+<text class="lbl" x="900" y="194" text-anchor="middle">Rebuilders (k-of-n)</text>
+<text class="sub" x="900" y="210" text-anchor="middle">independent operators</text>
+<rect x="790" y="246" width="220" height="58" rx="8" fill="#f1f2f4" stroke="#4b5563" stroke-width="1.6"/>
+<text class="lbl" x="900" y="265" text-anchor="middle">Transparency logs</text>
+<text class="sub" x="900" y="281" text-anchor="middle">realisations · releases</text>
+<text class="sub" x="900" y="295" text-anchor="middle">C2SP tiles + witnesses</text>
+<rect x="790" y="324" width="220" height="58" rx="8" fill="#f1f2f4" stroke="#4b5563" stroke-width="1.6"/>
+<text class="lbl" x="900" y="350" text-anchor="middle">App publishers</text>
+<text class="sub" x="900" y="366" text-anchor="middle">signed generations</text>
+<rect x="790" y="402" width="220" height="58" rx="8" fill="#f1f2f4" stroke="#4b5563" stroke-width="1.6"/>
+<text class="lbl" x="900" y="421" text-anchor="middle">Third-party hosts</text>
+<text class="sub" x="900" y="437" text-anchor="middle">APIs, mail, git forges,</text>
+<text class="sub" x="900" y="451" text-anchor="middle">model providers</text>
+<rect x="790" y="480" width="220" height="50" rx="8" fill="#f1f2f4" stroke="#4b5563" stroke-width="1.6"/>
+<text class="lbl" x="900" y="502" text-anchor="middle">fleet (optional)</text>
+<text class="sub" x="900" y="518" text-anchor="middle">org policy, attestation</text>
+<path class="edge" d="M 210 122 L 285 122" marker-end="url(#ah)"/>
+<rect class="elblbg" x="232.4" y="105" width="30.1" height="15" rx="3"/>
+<text class="elbl" x="247.5" y="116" text-anchor="middle">uses</text>
+<path class="edge" d="M 210 232 L 245 232 L 245 377 L 285 377" marker-end="url(#ah)"/>
+<rect class="elblbg" x="178.7" y="287.5" width="132.6" height="15" rx="3"/>
+<text class="elbl" x="245" y="298.5" text-anchor="middle">challenge / AK0 quote</text>
+<path class="edge" d="M 790 119 L 730 119" marker-end="url(#ah)"/>
+<rect class="elblbg" x="735.9" y="102" width="48.2" height="15" rx="3"/>
+<text class="elbl" x="760" y="113" text-anchor="middle">updates</text>
+<path class="edge" d="M 900 226 L 900 246" marker-end="url(#ah)"/>
+<text class="small" x="908" y="240" text-anchor="start">attest</text>
+<path class="edge" d="M 790 275 L 730 275" marker-end="url(#ah)"/>
+<rect class="elblbg" x="738.9" y="258" width="42.2" height="15" rx="3"/>
+<text class="elbl" x="760" y="269" text-anchor="middle">proofs</text>
+<path class="edge" d="M 790 353 L 730 353" marker-end="url(#ah)"/>
+<rect class="elblbg" x="744.9" y="336" width="30.1" height="15" rx="3"/>
+<text class="elbl" x="760" y="347" text-anchor="middle">apps</text>
+<path class="edge" d="M 730 431 L 790 431" marker-end="url(#ah)"/>
+<rect class="elblbg" x="711.8" y="414" width="96.5" height="15" rx="3"/>
+<text class="elbl" x="760" y="425" text-anchor="middle">egress via gate</text>
+<path class="edge dash" d="M 790 505 L 705 505 L 705 514" marker-end="url(#ah)"/>
+<rect class="elblbg" x="726.4" y="488" width="42.2" height="15" rx="3"/>
+<text class="elbl" x="747.5" y="499" text-anchor="middle">policy</text>
+<rect x="40" y="560" width="14" height="14" rx="3" fill="#f3efff" stroke="#6d28d9" stroke-width="1.6"/><text class="small" x="60" y="571">Boot and updates</text>
+<rect x="167.8" y="560" width="14" height="14" rx="3" fill="#eaf1ff" stroke="#1d4ed8" stroke-width="1.6"/><text class="small" x="187.8" y="571">Execution</text>
+<rect x="254.6" y="560" width="14" height="14" rx="3" fill="#fdeeee" stroke="#b91c1c" stroke-width="1.6"/><text class="small" x="274.6" y="571">Authority</text>
+<rect x="341.3" y="560" width="14" height="14" rx="3" fill="#e8f7f1" stroke="#047857" stroke-width="1.6"/><text class="small" x="361.3" y="571">State</text>
+<rect x="404.6" y="560" width="14" height="14" rx="3" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/><text class="small" x="424.6" y="571">Effects and agents</text>
+<rect x="544.2" y="560" width="14" height="14" rx="3" fill="#e6f6f9" stroke="#0e7490" stroke-width="1.6"/><text class="small" x="564.2" y="571">Experience</text>
+<rect x="636.8" y="560" width="14" height="14" rx="3" fill="#f1f2f4" stroke="#4b5563" stroke-width="1.6"/><text class="small" x="656.8" y="571">External</text>
+<rect x="717.7" y="560" width="14" height="14" rx="3" fill="#fdecf3" stroke="#9d174d" stroke-width="1.6"/><text class="small" x="737.7" y="571">Human</text>
+</svg>
