@@ -1,73 +1,82 @@
 'use strict';
 
-// An explanatory, client-only walkthrough. No terminal, API calls or live claims.
-const steps = [
+// Static policy examples, not a policy evaluator or a live terminal.
+const requests = [
   {
-    title: 'A workspace of its own.',
-    description: 'The planned workbench gives a coding agent a microVM with explicit project shares. Its tools work inside that boundary; host files and credentials are not ambient permissions.',
-    component: 'bench + broker',
-    trace: [['workspace', 'parser-fix / agent-07'], ['project', 'read + working copy'], ['host home', 'not granted', 'muted'], ['effect', 'requires authorization', 'mint']]
+    decision: 'WITHIN GRANT', kind: 'allow',
+    title: 'The project is an explicit VM share.',
+    description: 'Broker authorizes the project grant. Bench exposes it to the agent’s workbench as a share with the permitted access. Other home directories are not shared.',
+    path: [['broker', 'check grant'], ['bench', 'expose share'], ['agent', 'open file']],
+    implication: 'You can let the agent modify one repository without giving it every file your login can read.',
+    status: 'Broker and native Warden grants have implementations and development tests. The agent microVM path is still planned.',
+    doc: '02-architecture/authority-flow.md', label: 'Authority flow'
   },
   {
-    title: 'Useful access. Clear limits.',
-    description: 'The agent edits, builds and tests its working copy. The intended integration bounds spending and network access, and tracks sensitive or untrusted inputs before allowing further actions.',
-    component: 'aide + broker + gate',
-    trace: [['change', 'parser boundary fixed'], ['tests', 'passing in this example', 'mint'], ['network', 'approved destinations only'], ['budget', 'hard ceiling, shared by retries']]
+    decision: 'NO FILE GRANT', kind: 'deny',
+    title: 'Your SSH directory was never mounted.',
+    description: 'This task has a project grant, not a grant to your home directory. The process cannot reach your SSH key through its filesystem view. In the full design, credential use goes through authorized services with separate policy checks.',
+    path: [['agent', 'request key file'], ['workbench', 'no shared path'], ['result', 'read fails']],
+    implication: 'A dependency script running in this workspace should not inherit your personal credentials.',
+    status: 'Native filesystem isolation and Vault exist. Workbench integration and Gate’s credential-injection path are still planned.',
+    doc: '06-security/secrets.md', label: 'How secrets are used'
   },
   {
-    title: 'Progress survives the process.',
-    description: 'Loom records completed observations and pending steps. Recovery uses fresh attempts and rechecks authority. The current implementation proves this with controlled effects; full reboot and agent integration come later.',
-    component: 'loom',
-    trace: [['step', 'test result recorded'], ['interruption', 'worker stopped', 'muted'], ['recovery', 'new execution attempt'], ['authority', 'checked again', 'mint']]
+    decision: 'REVIEW REQUIRED', kind: 'review',
+    title: 'Private data + untrusted input + egress.',
+    description: 'This session has read a private repository and an untrusted issue. The destination is not marked sink-safe, so adding egress completes the combination restricted by the Rule of Two. Without an accepted flow proof, it needs a declassification approval.',
+    path: [['labels', 'track exposure'], ['broker', 'require review'], ['gate', 'enforce decision']],
+    implication: 'A malicious instruction in an issue cannot, by itself, grant permission to send your repository elsewhere.',
+    status: 'Broker label tracking and policy evaluation exist. Enforcement through the complete agent and external-effect path is still being integrated.',
+    doc: '06-security/labels-and-rule-of-two.md', label: 'Labels and the Rule of Two'
   },
   {
-    title: 'Review before it leaves.',
-    description: 'The planned coding-agent flow presents the exact prepared change and destination before a T3 approval. A changed payload or invalid permission must block execution until the required review is complete.',
-    component: 'aide + gate + trusted approval',
-    trace: [['proposal', 'open a pull request'], ['payload', 'bound to the reviewed digest'], ['approval', 'waiting for you', 'muted'], ['dispatch', 'not authorized yet']]
+    decision: 'APPROVAL PENDING', kind: 'review',
+    title: 'Review the effect that will be executed.',
+    description: 'In this example, updating an existing branch needs explicit approval of the destination, ref updates and commits. Approval is bound to that payload. A changed payload needs fresh approval; Gate checks authority again before execution.',
+    path: [['gate', 'prepare effect'], ['you', 'review payload'], ['gate', 'check and commit']],
+    implication: 'Permission to edit and test the working copy does not automatically include permission to publish it.',
+    status: 'The approval contracts and authority services exist. Real Gate adapters, agent workbenches and the complete coding-agent flow remain planned.',
+    doc: '07-agents/effects-and-outbox.md', label: 'Effect preparation and approval'
   },
   {
-    title: 'Know what happened next.',
-    description: 'Confirmed effects produce inspectable receipts. Supported local transactions can be undone; external actions may need compensation. If a remote outcome is unknown, reconcile it before risking a duplicate.',
-    component: 'ledger + strata + gate',
-    trace: [['result', 'confirmed by the executor', 'mint'], ['evidence', 'signed receipt'], ['local change', 'undo where supported'], ['uncertain result', 'reconcile before retry']]
+    decision: 'RECONCILE FIRST', kind: 'review',
+    title: 'The reply was lost. Did the action complete?',
+    description: 'Loom restores progress and starts a new attempt with fresh authority. Gate uses the effect’s stable identity to check the recorded outcome or the destination’s state. Retrying requires an adapter contract that makes it safe; otherwise the outcome stays unknown.',
+    path: [['loom', 'restore progress'], ['broker', 'fresh authority'], ['gate', 'reconcile effect']],
+    implication: 'Completed work can be reused. An uncertain external action must not be blindly repeated.',
+    status: 'Loom restart recovery and lost-reply tests exist with controlled Gate and Depot doubles. Real adapters and full machine-reboot integration come later.',
+    doc: '08-state/durable-workflows.md', label: 'Durable workflows and unknown outcomes'
   }
 ];
 
-const buttons = [...document.querySelectorAll('.workflow-step')];
-const next = document.getElementById('next-step');
-let currentStep = 0;
-
-function selectStep(index) {
-  if (!Number.isInteger(index) || index < 0 || index >= steps.length) return;
-  currentStep = index;
-  const step = steps[index];
-  buttons.forEach((button, i) => {
+const requestButtons = [...document.querySelectorAll('.request')];
+function selectRequest(index) {
+  const request = requests[index];
+  if (!request) return;
+  requestButtons.forEach((button, i) => {
     button.classList.toggle('active', i === index);
     button.setAttribute('aria-pressed', String(i === index));
   });
-  document.getElementById('step-count').textContent = `STEP ${String(index + 1).padStart(2, '0')} / 05`;
-  document.getElementById('step-title').textContent = step.title;
-  document.getElementById('step-description').textContent = step.description;
-  document.getElementById('step-component').textContent = step.component;
-  const trace = document.getElementById('step-trace');
-  trace.replaceChildren(...step.trace.map(([key, value, emphasis]) => {
-    const line = document.createElement('p');
-    const label = document.createElement('span');
-    label.className = 'trace-key';
-    label.textContent = key;
-    const content = document.createElement('span');
-    content.textContent = value;
-    if (emphasis) content.className = `trace-${emphasis}`;
-    line.append(label, content);
-    return line;
+  const decision = document.getElementById('decision');
+  decision.textContent = request.decision;
+  decision.dataset.kind = request.kind;
+  document.getElementById('request-count').textContent = String(index + 1).padStart(2, '0') + ' / 05';
+  document.getElementById('request-title').textContent = request.title;
+  document.getElementById('request-description').textContent = request.description;
+  document.getElementById('request-implication').textContent = request.implication;
+  document.getElementById('request-status').textContent = request.status;
+  document.getElementById('request-path').replaceChildren(...request.path.map(([name, action]) => {
+    const node = document.createElement('li');
+    const detail = document.createElement('span');
+    detail.textContent = action;
+    node.append(document.createTextNode(name), detail);
+    return node;
   }));
-  next.replaceChildren(document.createTextNode(index === steps.length - 1 ? 'Start again ' : 'Next step '));
+  const link = document.getElementById('request-doc');
   const arrow = document.createElement('span');
+  arrow.textContent = '↗';
   arrow.setAttribute('aria-hidden', 'true');
-  arrow.textContent = index === steps.length - 1 ? '↺' : '→';
-  next.append(arrow);
+  link.href = 'handbook/#/' + request.doc;
+  link.replaceChildren(document.createTextNode(request.label + ' '), arrow);
 }
-
-buttons.forEach(button => button.addEventListener('click', () => selectStep(Number(button.dataset.step))));
-next.addEventListener('click', () => selectStep((currentStep + 1) % steps.length));
+requestButtons.forEach(button => button.addEventListener('click', () => selectRequest(Number(button.dataset.request))));

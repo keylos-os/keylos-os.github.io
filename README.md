@@ -2,7 +2,7 @@
 
 Public project site at **https://keylos-os.github.io/**, with the engineering handbook at **https://keylos-os.github.io/handbook/**.
 
-The landing page presents the agent workstation as the primary use case. Working development components are distinguished from planned integrations. The interactive workflow is an illustration: it does not execute commands or connect to a VM.
+The homepage is a technical introduction to the agent workstation. Five example requests explain file grants, credential access, labels, effect approval and recovery, with implementation status and handbook references. The request explorer is explanatory: it does not evaluate policy, execute commands or connect to a VM.
 
 ## Hosting
 
@@ -20,9 +20,9 @@ Open `http://127.0.0.1:8789/`. The handbook uses `fetch`, so serve it over HTTP 
 
 ## Editing the landing page
 
-- `index.html`: content, navigation, status and use cases.
+- `index.html`: introduction, request explorer, system boundaries, status and reading routes.
 - `styles.css`: responsive visual design and reduced-motion behavior.
-- `site.js`: the five-step explanatory walkthrough.
+- `site.js`: the five request examples and their component paths.
 - `assets/keylos-mark.png`: project mark.
 
 Keep the early-development status visible. Update the status snapshot from actual implementation reports; specification versions are not released OS versions. Do not describe illustrative terminal output as a running demonstration.
@@ -48,7 +48,7 @@ Review the generated diff before committing and pushing. This repository intenti
 ## Checks before publishing
 
 - Check HTML links and local asset paths, including handbook/spec cross-links.
-- Exercise all workflow buttons and use-case disclosures with keyboard and pointer input.
+- Exercise all request buttons and the additional-use disclosure with keyboard and pointer input.
 - Check narrow mobile, tablet and desktop widths and reduced-motion mode.
 - Confirm that no private-repository links, credentials, development fixtures or implementation files slipped into the publication set.
 - Verify the public root, handbook and representative specification after Pages deploys.
@@ -57,4 +57,4 @@ Review the generated diff before committing and pushing. This repository intenti
 
 The current site is entirely static. GitHub Pages would host the UI for a live demo, while an independently operated HTTPS/WebSocket service would host its sessions.
 
-Prefer a guided demonstration first. A future shell should use a disposable VM per visitor, synthetic fixtures, externally enforced time/concurrency/resource limits, and no production credentials or general network access. A shared persistent anonymous shell is not the intended deployment model. Provisioning an AWS backend is a separate task.
+A proposed invite-only demo uses one Keylos VM with a separate non-owner account, confined terminal session, workspace and resource limits for each visitor. This needs a browser-to-Hearth session bridge, PTY integration, reconnect/expiry handling and verified isolation between users. Regular non-owner demo accounts are needed for Loom because it currently refuses guest enrollment. Use synthetic fixtures and no production credentials; the machine shares a kernel and its reboot affects all visitors. Provisioning an AWS backend is a separate task.
